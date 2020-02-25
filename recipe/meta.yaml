@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -23,6 +23,8 @@ requirements:
   run:
     - python
     - termcolor
+    - argparse
+    - bs4
     - numpy
     - six
     - jinja2
