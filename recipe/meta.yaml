@@ -24,7 +24,6 @@ requirements:
     - python
     - pip
     - termcolor
-    - argparse
     - beautifulsoup4
     - numpy
     - six
