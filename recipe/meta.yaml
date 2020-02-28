@@ -24,10 +24,11 @@ requirements:
     - python
     - pip
     - termcolor
-    - beautifulsoup4
+    - bs4
     - numpy
     - six
     - jinja2
+    - argparse  # [py2k]
     - beautifulsoup4
     - ase
 
