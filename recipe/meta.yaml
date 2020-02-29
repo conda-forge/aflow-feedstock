@@ -1,5 +1,5 @@
 {% set name = "aflow" %}
-{% set version = "0.0.10" %}
+{% set version = "0.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8544fb42af170692448c41bf99a8f47cb9803fd31754e6608381bff27bca2ff8
+  sha256: c94c20fb437f059780921244d9c6ab416278df33594b359ef0157cb1c329447b
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -38,7 +38,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Python API wrapping the AFLUX API language for AFLOW library.'
+  summary: Python API wrapping the AFLUX API language for AFLOW library.
 
   description: |
     Python API wrapping the AFLUX API language for AFLOW library. 
