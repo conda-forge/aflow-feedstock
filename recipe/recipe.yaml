@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  name: aflow
+  version: "0.0.11"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: c94c20fb437f059780921244d9c6ab416278df33594b359ef0157cb1c329447b
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - pytest-runner
+    - pypandoc
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - pip
+    - termcolor
+    - numpy
+    - six
+    - jinja2
+    - beautifulsoup4
+    - ase
+
+tests:
+  - python:
+      imports:
+        - aflow
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: Python API wrapping the AFLUX API language for AFLOW library.
+  description: |
+    Python API wrapping the AFLUX API language for AFLOW library.
+    Note: This is not an official repo of the AFLOW consortium and is not
+    maintained by them. API Documentation.
+  homepage: https://github.com/rosenbrockc/aflow
+  repository: https://github.com/rosenbrockc/aflow
+  documentation: https://rosenbrockc.github.io/aflow/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
